@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img {
+            width: 500px;
+            height: 500px;
+        }
+        .contactUs {
+            position: fixed;
+            background-image: url("./whatsapp.png");
+            bottom: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            border-radius: 50%;
+        }
+
+        .relativeTitle {
+            position: relative;
+            left: 550px;
+            width: 300px;
+            top: 150px;
+        }
+        .relativeDiv {
+            position: relative;
+            border: 2px dotted  darkcyan;
+            width: 650px;
+            height: 650px;
+            padding: 16px;
+        }
+        .mutiColor {
+            position: absolute;
+            bottom: 50px;
+            right: 50px;
+        }
+        .myH4 {
+            position: absolute;
+            top: 300px;
+            right: 50px;
+            color: darkolivegreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contactUs"></div>
+
+    <h1 class="relativeTitle">Red & Black Rose</h1>
+    <img src="./red-black-rose.jpg" />
+    
+    <hr />
+
+    <h1>Black Rose</h1>
+    <img src="./black-rose.webp" />
+    <hr />
+
+    <h1>Yellow Rose</h1>
+    <img src="./yellow-rose.webp" />
+    <hr />
+
+    <h1>Pink Rose</h1>
+    <img src="./pink-rose.webp" />
+
+
+    <div class="relativeDiv">
+        <h3>I am in relative div</h3>
+        <img class="mutiColor" src="./multi-color.jfif" />
+    </div>
+
+
+    <div>
+        <div>
+            <h4 class="myH4">I will be relative to body tag</h4>
+        </div>
+    </div>
+</body>
+
+</html>
