@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Name Frequency</title>
+		<style>
+			body {
+				padding-left: 450px;
+			}
+			table {
+				border-collapse: collapse;
+			}
+
+			th,
+			td {
+				border: 1px solid black;
+				padding: 16px;
+				text-align: left;
+			}
+
+			button,
+			input {
+				padding: 16px;
+				width: 300px;
+				box-sizing: border-box;
+			}
+			.summaryRow {
+				font-weight: bolder;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="nameForm">
+			<div>
+				<input
+					required
+					autocomplete="off"
+					type="text"
+					id="firstName"
+					placeholder="Enter First Name"
+					name="firstName"
+				/>
+			</div>
+			<br />
+			<button type="submit">Submit</button>
+		</form>
+		<br />
+		<table id="nameTable">
+			<thead>
+				<tr>
+					<th>First Character</th>
+					<th>Names</th>
+					<th>Frequency</th>
+				</tr>
+			</thead>
+			<tbody id="nameTableBody">
+				<tr class="summaryRow">
+					<td>Total</td>
+					<td></td>
+					<td>0</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<script>
+			var frequency = {};
+
+			document
+				.getElementById("nameForm")
+				.addEventListener("submit", function (event) {
+					event.preventDefault();
+					generateNameFrequency();
+				});
+
+			function generateNameFrequency() {
+				var firstNameInput = document.getElementById("firstName");
+				var name = firstNameInput.value.trim();
+
+				// Count frequency of names by first character
+				var firstCharacter = name.charAt(0).toUpperCase();
+				if (firstCharacter in frequency) {
+					frequency[firstCharacter].push(name);
+				} else {
+					frequency[firstCharacter] = [name];
+				}
+
+				// Populate table with frequency data
+				var tableBody = document.getElementById("nameTableBody");
+				tableBody.innerHTML = "";
+				const sorted = Object.keys(frequency).sort((a, b) => {
+					const lenA = frequency[a].length;
+					const lenB = frequency[b].length;
+					if (lenA !== lenB) {
+						return lenB - lenA;
+					}
+					return a.localeCompare(b);
+				});
+
+				function append({ char, names, count, isSummary }) {
+					var row = document.createElement("tr");
+					var firstCharCell = document.createElement("td");
+					const namesCell = document.createElement("td");
+					var frequencyCell = document.createElement("td");
+
+					firstCharCell.textContent = char;
+					frequencyCell.textContent = count;
+					namesCell.textContent = names.join("  |  ");
+
+					row.appendChild(firstCharCell);
+					row.appendChild(namesCell);
+					row.appendChild(frequencyCell);
+
+					tableBody.appendChild(row);
+					if (isSummary) {
+						row.classList.add("summaryRow");
+					}
+				}
+				let c = 0;
+				for (var i = 0; i < sorted.length; i++) {
+					var char = sorted[i];
+					var count = frequency[char].length;
+					c += count;
+					const names = frequency[char];
+					append({ char, count, names });
+					if (i === sorted.length - 1) {
+						append({ char: "Total", count: c, names: [], isSummary: true });
+					}
+				}
+
+				// Reset form input
+				firstNameInput.value = "";
+			}
+		</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.js"></script>
+		<script>
+			const reducer = (state = [], action) => {
+				console.log("reducer", state, action);
+				if (action.type === "ADD_USER") {
+					return [...state, action.payload];
+				} else if (action.type === 'REMOVE_USER') {
+					return state.filter(user => user !== action.payload);
+				}
+				return state;
+			};
+
+			const store = Redux.createStore(reducer, ["Ghanshyam", "Raju"]);
+			store.dispatch({ type: "ADD_USER", payload: "jack" });
+			store.subscribe(function (){
+				console.log("subscribe", store.getState());
+			});
+
+		</script>
+	</body>
+</html>
