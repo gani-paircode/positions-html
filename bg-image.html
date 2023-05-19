@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 50px auto;
+            width: 600px;
+        }
+        
+        .hw500{
+            height: 500px;
+            width: 500px;
+        }
+
+        .hw400 {
+            height: 400px;
+            width: 400px;
+        }
+
+        .cp200 {
+            background-image: url("./cp200.jpg");
+        }
+
+        .separator {
+            height: 150px;
+        }
+        .bg-no-repeat {
+            background-repeat: no-repeat;
+        }
+        .myDiv {
+            border: 1px solid rgb(118, 243, 125);
+        }
+        .bg-cover {
+            background-size: cover;
+        }
+        .bg-repeatX {
+            background-repeat: repeat-x;
+        }
+        .bg-repeatY {
+            background-repeat: repeat-y;
+        }
+        .bg-center {
+            background-position: center;
+        }
+
+        .bg-center-x {
+            background-position-x: center;
+            background-position-y: bottom;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>500 x 500 div & 100x100 bg image</h1>
+    <div class="myDiv hw500 cp200"></div>
+
+    <div class="separator"></div>
+
+    <h1>400 x 400 div & 100x100 bg image</h1>
+    <div class="myDiv hw400 cp200"></div>
+
+    <div class="separator"></div>
+
+    <h1>400 x 400 div & 100x100 bg image not repeating</h1>
+    <div class="myDiv hw400 cp200 bg-no-repeat"></div>
+
+    <div class="separator"></div>
+
+    <h1>400 x 400 div & 100x100 bg image not repeating & scale to div</h1>
+    <div class="myDiv hw400 cp200 bg-no-repeat bg-cover"></div>
+
+
+    
+    <div class="separator"></div>
+        
+    <h1>400 x 400 div & 100x100 bg repeat x</h1>
+    <div class="myDiv hw400 cp200 bg-repeatX"></div>
+
+    
+    <div class="separator"></div>
+        
+    <h1>400 x 400 div & 100x100 bg repeat y</h1>
+    <div class="myDiv hw400 cp200 bg-repeatY"></div>
+
+
+    
+    <div class="separator"></div>
+        
+    <h1>400 x 400 div & 100x100 bg image center</h1>
+    <div class="myDiv hw400 cp200 bg-center bg-no-repeat"></div>
+
+
+    <div class="separator"></div>
+        
+    <h1>400 x 400 div & 100x100 bg image center on x axis, bottom at y axis</h1>
+    <div class="myDiv hw400 cp200 bg-center-x bg-bottom-y bg-no-repeat"></div>
+
+
+    <div class="separator"></div>
+        
+    <h1>400 x 400 div & 100x100 bg image at top right</h1>
+    <div class="myDiv hw400 cp200 bg-no-repeat" style="background-position-x: right; background-position-y: top;"></div>
+</body>
+
+</html>
