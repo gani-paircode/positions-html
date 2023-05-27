@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .theme1 {
+  --headerBackground: antiquewhite;
+  --mainBackground: white;
+  --footerBackground: darkgrey;
+  --newsBoxBroder: darkgrey;
+  --newsTitleBorder: darkcyan;
+  --textColor: black;
+}
+
+.theme2 {
+  --headerBackground: lightblue;
+  --mainBackground: lightcyan;
+  --footerBackground: darkseagreen;
+  --newsBoxBroder: darkseagreen;
+  --newsTitleBorder: lemonchiffon;
+  --textColor: red;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+header {
+  padding: 16px;
+  background-color: var(--headerBackground);
+}
+
+main {
+  background-color: var(--mainBackground);
+}
+
+footer {
+  height: 120px;
+  background-color: var(--footerBackground);
+}
+
+article.newsBox {
+  padding: 1rem;
+  /* margin: 16px; */ /* removed this on diken's suggestion  */
+  border: 1px solid var(--newsBoxBroder);
+}
+
+article.newsBox h3.newsTitle {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--newsTitleBorder);
+  color: var(--textColor);
+}
+
+article.newsBox div.newsShortDescription {
+  padding-top: 1rem;
+}
+    </style>
+</head>
+
+<body class="theme2">
+    <header>
+        <h3>My news portal</h3>
+    </header>
+    <main>
+        <article class="newsBox">
+            <h3 class="newsTitle">
+                Pele, Brazil's sublimely skilled soccer star who charmed the world, dead at 82
+            </h3>
+            <div class="newsShortDescription">
+                Pele, the magical Brazilian soccer star who rose from barefoot poverty to become one of the greatest and
+                best-known athletes in modern history, died at the age of 82, his daughter said on Instagram on
+                Thursday.
+            </div>
+        </article>
+        <article class="newsBox">
+            <h3 class="newsTitle">
+                Covid surge in China can create havoc across the globe: Report
+            </h3>
+            <div class="newsShortDescription">
+                Beijing [China]: While the world is still recovering from the losses of livelihoods, damages to
+                businesses and national economies, and healthcare disruptions, the new, deadly variant of coronavirus
+                from China can create havoc across the globe if its spread
+                is not checked in time, reported The HK Post.
+                <br /> What is going on in China at present has stoked fears about the repetition of the horrific
+                Covid-19 outbreak that killed millions of people across the globe.
+            </div>
+        </article>
+        <article class="newsBox">
+            <h3 class="newsTitle">
+                IPL 2023 Final Preview: Shubman Gill Gets Ready To Spoil MS Dhoni's Farewell Party
+            </h3>
+            <div class="newsShortDescription">
+                Mahendra Singh Dhoni wouldn't mind a 'Farewell to Remember' but a young Shubman Gill, oozing grace, would do everything under his control to prevent Chennai Super Kings from beating Gujarat Titans to its fifth IPL title, on Sunday.
+                <br />
+                On Sunday, at the 132,000 seater Narendra Modi Stadium, the soon-to-be 42 Dhoni will have one last assignment in his favourite Canary Yellow jersey -- to stop Indian cricket's megastar-in-waiting and do a 'High Five'.
+            </div>
+        </article>
+        <article class="newsBox">
+            <h3 class="newsTitle">
+                IPL 2023: MI Will Look For Replacements If Bowlers Are Not Fit, Concedes Head Coach Mark Boucher
+            </h3>
+            <div class="newsShortDescription">
+                Head coach Mark Boucher says Mumbai Indians will look for replacement of front-line bowlers if they are not fit within time, as the five-time winners managed to reach playoffs despite missing first team bowlers Jasprit Bumrah, Jofra Archer and Jhye Richardson this season
+                <br />
+                In a season wherein Mumbai Indians became the first team to concede four totals above 200 on the trot, the batting unit carried them until the Eliminator clash, wherein they suffered a big loss at the hands of Gujarat Titans here. 
+            </div>
+        </article>
+        <article class="newsBox">
+            <h3 class="newsTitle">
+                This Innings Will Be Remembered For Years: Former Players Hail Shubman Gill's Century Vs MI
+            </h3>
+            <div class="newsShortDescription">
+                Shubman Gill's electrifying hundred against Mumbai Indians in IPL Qualifier 2 was hailed by former cricketers with the legendary Sunil Gavaskar calling it an innings which will be remembered for the youngster's ability to play textbook cricketing shots in a T20 format.
+                <br />
+                The 23-year-old from Punjab on Friday extended his purple patch with a 60-ball 129-run knock as GT beat MI by 62 runs to enter their second straight IPL final.
+            </div>
+        </article>
+    </main>
+    <footer>This is footer</footer>
+</body>
+
+</html>
